@@ -23,7 +23,7 @@ pipeline {
              steps {
                   script {
                      withCredentials([string(credentialsId: 'docker-hub-pwd', variable: 'dockerhubpwd')]) {
-                     bat 'docker login -u prk54989 -p Docker@123'
+                     bat 'docker login -u prk54989 -p ${docker-hub-pwd}'
                      bat 'docker push prk54989/spring-boot-docker'
                     }
                   }
